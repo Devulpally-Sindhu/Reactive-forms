@@ -1,16 +1,7 @@
-<h1>StudentForm</h1>
-<div [formGroup]="studentForm">
-  Firstname: <input type="text" formControlName="firstname" placeholder="please eneter your firstname">
-  <br>
-  lastname: <input type="text" formControlName="lastname" placeholder="please enter your lastaname">
-  <br>
-  mobileNumbers:
-  <div formArrayName="mobilenumbers">
-    <div *ngFor="let x of mobilenumbers.controls;let i=index">
-      <input type="text" [formControlName]="i">
-    </div>
-  </div>
-  <button (click)="addNew()">+Add</button>
-  <br>
-  <button (click)="add()">Submit</button>
-</div>
+
+<input type="checkbox" name="technologies" (change)="onCheck($event)" value="angular">:Angualar
+<input type="checkbox" name="technologies" (change)="onCheck($event)" value="html">:HTML
+<input type="checkbox" name="technologies" (change)="onCheck($event)" value="css">:CSS
+<input type="checkbox" name="technologies" (change)="onCheck($event)" value="javascript">:Javascript
+<input type="checkbox" name="technologies" (change)="onCheck($event)" value="node">:Nodejs
+<h1>{{student1}}</h1>
