@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormArray, FormControl, FormGroup } from '@angular/forms';
+import { FormArray, FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { first } from 'rxjs';
 
 @Component({
@@ -9,30 +9,29 @@ import { first } from 'rxjs';
 })
 export class AppComponent {
   title = 'Reactive-forms';
-  studentForm=new FormGroup({
-    firstname:new FormControl(),
-    lastname:new FormControl(),
-    mobilenumbers:new FormArray([new FormControl()]),
-    locations:new FormArray([new FormControl()])
-  })
 
-  addStudent(){
-    console.log(this.studentForm.value)
+  studentForm:any;
+
+  constructor(public fb:FormBuilder){}
+  ngOnInit(){
+    this.studentForm=this.fb.group({
+      firstname:[''],
+      lastname:[''],
+      mobilenumbers:this.fb.array([[]])
+    })
   }
 
   get mobilenumbers(){
     return this.studentForm.get('mobilenumbers') as FormArray
   }
 
-  get locations(){
-    return this.studentForm.get('locations') as FormArray
+  add(){
+    console.log(this.studentForm.value)
   }
 
   addNew(){
-    this.mobilenumbers.push(new FormControl())
-  }
+    this.mobilenumbers.push(this.fb.control(''))
 
-  addLocation(){
-    this.locations.push(new FormControl())
   }
-}
+  
+  }

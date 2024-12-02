@@ -1,25 +1,16 @@
-<h1>Student Form</h1>
+<h1>StudentForm</h1>
 <div [formGroup]="studentForm">
-  Firstname:<input type="text" formControlName="firstname" placeholder="Please enter your firstname">
+  Firstname: <input type="text" formControlName="firstname" placeholder="please eneter your firstname">
   <br>
-  LastName:<input type="text" formControlName="lastname" placeholder="please eneter your lastname">
+  lastname: <input type="text" formControlName="lastname" placeholder="please enter your lastaname">
   <br>
-  Mobile Number:
+  mobileNumbers:
   <div formArrayName="mobilenumbers">
     <div *ngFor="let x of mobilenumbers.controls;let i=index">
       <input type="text" [formControlName]="i">
     </div>
   </div>
-  <button (click)="addNew()">+ADD</button>
+  <button (click)="addNew()">+Add</button>
   <br>
-  Locations:
-  <div formArrayName="locations">
-    <div *ngFor="let y of locations.controls;let i=index">
-      <input type="text" [formControlName]="i">
-    </div>
-  </div>
-  <button (click)="addLocation()">+Add Locations</button>
-  <br>
-  <button (click)="addStudent()" >Add Student</button>
-
+  <button (click)="add()">Submit</button>
 </div>
