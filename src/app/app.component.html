@@ -1,5 +1,21 @@
-
-<input type="radio" name="gender"  value="angular" [(ngModel)]="gen">:Angualar
-<input type="radio" name="gender"  value="html" [(ngModel)]="gen">:HTML
-<input type="radio" name="gender"  value="css" [(ngModel)]="gen">:CSS
-<h1>{{gen}}</h1>
+<h1>Student Form</h1>
+<div [formGroup]="studentForm">
+  firstname: <input type="text" formControlName="firstname">
+  <br>
+  Lastname: <input type="text" formControlName="lastname">
+  <div>
+    Female: <input type="radio" formControlName="gender" value="f">
+    <br>
+    Male: <input type="radio" formControlName="gender" value="m">
+    <br>
+    others: <input type="radio" formControlName="gender" value="others">
+    <br>
+  </div>
+    <div *ngFor="let a of techs.controls;let i=index">
+      Angular: <input type="checkbox"  (change)="updateTechs($event)" [formControlName]="i" >
+  Html: <input type="checkbox" (change)="updateTechs($event)" [formControlName]="i">
+  css: <input type="checkbox" (change)="updateTechs($event)" [formControlName]="i">
+    </div>
+  <br>
+  <button (click)="add()">Submit</button>
+</div>
