@@ -1,7 +1,5 @@
 
-<input type="checkbox" name="technologies" (change)="onCheck($event)" value="angular">:Angualar
-<input type="checkbox" name="technologies" (change)="onCheck($event)" value="html">:HTML
-<input type="checkbox" name="technologies" (change)="onCheck($event)" value="css">:CSS
-<input type="checkbox" name="technologies" (change)="onCheck($event)" value="javascript">:Javascript
-<input type="checkbox" name="technologies" (change)="onCheck($event)" value="node">:Nodejs
-<h1>{{student1}}</h1>
+<input type="radio" name="gender"  value="angular" [(ngModel)]="gen">:Angualar
+<input type="radio" name="gender"  value="html" [(ngModel)]="gen">:HTML
+<input type="radio" name="gender"  value="css" [(ngModel)]="gen">:CSS
+<h1>{{gen}}</h1>

@@ -10,31 +10,14 @@ import { first } from 'rxjs';
 export class AppComponent {
   title = 'Reactive-forms';
 
-  // studentForm:any;
-  student1:any[]=[];
+  gen:string=''
 
   constructor(){}
   ngOnInit(){
    
   }
 
-  onCheck(e:any){
-    if(e.target.checked){
-      this.student1.push(e.target.value)
-    }
-    else{
-      this.student1=this.student1.filter((x)=>{
-        if(e.target.value!==x){
-          return true
-        }
-        else{
-          return false
-        }
-      })
-    }
-    
-   
-  }
+  
   
 
   
